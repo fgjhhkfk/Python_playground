@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 modulator = 111
 a = [0, 1]
-r = 20
+r = 1000
 m = [a[0]%modulator, a[1]%modulator]
 
 
@@ -32,3 +32,7 @@ if len(m) > r:
     print 'Innerhalb der ' + str(r) + ' Zahlen langen Folge wiederholt sich der Remainder der Fibonacci Folge nicht.'
 else:
     print 'Die Remainder der Fibonacci Folge wiederholen sich mit dem Modulator ' + str(modulator) + ' alle ' + str(len(m)-2) + ' Zeichen.'
+
+plt.subplot(111)
+plt.plot(m)
+plt.show()
