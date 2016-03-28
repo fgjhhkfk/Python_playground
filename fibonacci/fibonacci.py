@@ -1,3 +1,5 @@
+# Alles rund um die Fibonacci Folge
+
 import matplotlib.pyplot as plt
 
 modulator = 111
