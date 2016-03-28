@@ -7,9 +7,11 @@ a = [0, 1]
 r = 20
 m = [a[0]%modulator, a[1]%modulator]
 
+
 def cross_sum(a):
     cs = a[-2]+a[-1]
     return cs
+
 
 def find_last_fibunacci_number(vec, modulator):
     while vec[-1] < modulator:
