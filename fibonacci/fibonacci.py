@@ -26,12 +26,12 @@ for i in range(0, r, 1):
     if m[-1] == 1 and m[-2] == 0:
         break
 
-print 'Die ersten 10 Zahlen der Fibonacci Folge sind: \n' + str(a[0:10])
-print 'Die letzte Fibonacci Zahl kleiner als ' + str(modulator) + ' ist ' + str(lfn)
+print 'Die ersten 10 Zahlen der Fibonacci Folge sind: \n' + str(a[0:10]) + '\n'
+print 'Die letzte Fibonacci Zahl kleiner als ' + str(modulator) + ' ist ' + str(lfn) + '\n'
 if len(m) > r:
-    print 'Innerhalb der ' + str(r) + ' Zahlen langen Folge wiederholt sich der Remainder der Fibonacci Folge nicht.'
+    print 'Innerhalb der ' + str(r) + ' Zahlen langen Folge wiederholt sich der Remainder der Fibonacci Folge nicht.' + '\n'
 else:
-    print 'Die Remainder der Fibonacci Folge wiederholen sich mit dem Modulator ' + str(modulator) + ' alle ' + str(len(m)-2) + ' Zeichen.'
+    print 'Die Remainder der Fibonacci Folge wiederholen sich mit dem Modulator ' + str(modulator) + ' alle ' + str(len(m)-2) + ' Zeichen.' + '\n'
 
 plt.subplot(111)
 plt.plot(m)
