@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.style
 
+plt.xkcd()
 
 def zinsberechnung(K, Z, Rate, sondertilgung, zinsanpassung):
     j = 0
@@ -29,11 +31,13 @@ def zinsberechnung(K, Z, Rate, sondertilgung, zinsanpassung):
         if j in sondertilgung[0]:
             K = K - sondertilgung[1][sondertilgung[0].index(j)]
             bez = bez + sondertilgung[1][sondertilgung[0].index(j)]
+            print 'Sondertilgung (Jahr ' +str(sondertilgung[0][sondertilgung[0].index(j)])+ '): ' + str(sondertilgung[1][sondertilgung[0].index(j)]) + 'EUR'
 
         # ab einem gegebenen Jahr immer die gleiche sondertilgung abziehen
         if sondertilgung[2] and j >= sondertilgung[2][0] and sondertilgung[3][0]<K:
             K = K - sondertilgung[3][0]
             bez = bez + sondertilgung[3][0]
+            print 'Sondertilgung (Jahr ' + str(sondertilgung[2][0]) + '): ' + str(sondertilgung[3][0]) + 'EUR'
 
         res = np.append(res, K)
         j += 1
@@ -57,7 +61,7 @@ plt.plot(res1, '-og', label='Modell 1: ' + str(K1/1000) + 'KEUR, T ' + str(T1*10
 
 # Modell 2 (Anuitaetendarlehnen mit 10 Jahren Zinsbindung; Rate 560EUR)
 K2 = 100000
-Z2 = 0.015
+Z2 = 0.0206
 T2 = 560.00*12/K2-Z2
 zinsanpassung = ([999],[0])
 sondertilgung = ([1,2,4,5],[5000, 5000, 5000, 5000],[8],[4500])
@@ -91,6 +95,5 @@ plt.ylabel('Restschuld [EUR]')
 plt.xlabel('Zeit [Jahre]')
 plt.axvline(10, linewidth=2, linestyle = '--', color = 'r')
 plt.axvline(20, linewidth=2, linestyle = '--', color = 'r')
-
 plt.show()
 
