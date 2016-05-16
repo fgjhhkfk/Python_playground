@@ -8,7 +8,8 @@ def charcount(text, char):
 def readfile(filename):
     with open(filename) as f:
         text = f.read()
-    return text
+##    print type(text)
+    return text.upper()
 
 def chardistribution(text):
     dctnry = {}
