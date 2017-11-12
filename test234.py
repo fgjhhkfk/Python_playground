@@ -15,6 +15,7 @@ b = mean(y) - m*mean(x)
 print m
 print b
 
+# Gerade fitten
 geradenfit = [m*xn + b for xn in range(0, max(x), 1)]
 
 print max(x)
