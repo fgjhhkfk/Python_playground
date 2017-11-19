@@ -38,7 +38,7 @@ def print_ebook_metadata(path2file):
 
 path = '/media/nas/ebooks/K/'
 
-# ueber alle dateien mit der Endung .epub iterieren
+# ueber alle Dateien mit der Endung .epub iterieren
 for i in os.listdir(path):
     if i.endswith('.epub'):
         print_ebook_metadata(path + i)
