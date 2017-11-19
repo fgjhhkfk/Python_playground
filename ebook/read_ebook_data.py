@@ -42,4 +42,3 @@ path = '/media/nas/ebooks/K/'
 for i in os.listdir(path):
     if i.endswith('.epub'):
         print_ebook_metadata(path + i)
-
