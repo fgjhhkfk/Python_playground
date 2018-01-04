@@ -23,17 +23,17 @@ def print_ebook_metadata(path2file):
         autor = buch.get_metadata('DC', 'creator')[0][0].split(' ')
         print(len(autor))
         print('AUTOR:   ' + autor[-1] + ',' + autor[-2])
-        print autor[0]+autor[1]+autor[-1]
+        print('AUTOR:   ' + ' '.join(autor))
 
         # wenn der Dateiname den Autorennamen enthaelt, nichts machen
         if not path2file.__contains__(autor[-1]):
             if len(autor) > 1:
-                print path2file + ' --> ' + autor[-1] + ', ' + ' '.join(autor[:-1]) + ' - ' + titel
+                print(path2file + ' --> ' + autor[-1] + ', ' + ' '.join(autor[:-1]) + ' - ' + titel)
             else:
-                print path2file + ' --> ' + autor[-1] + ' - ' + titel
+                print(path2file + ' --> ' + autor[-1] + ' - ' + titel)
 
     except KeyError:
-        print path2file + ' --> ' + titel
+        print(path2file + ' --> ' + titel)
 
 
 path = '/media/nas/ebooks/K/'
