@@ -1,3 +1,6 @@
+#!/bin/usr/pyhon
+""" gibt ein Komplementaerfarbenpaar aus dem HSV Farbkreis wieder """
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as clr
@@ -11,7 +14,10 @@ y = np.linspace(1, 2*np.pi, 100)
 
 scale = 256.0/360.0
 
+# Auswahl eines Zufaelligen Winkels auf dem Farbkreis
 winkel = np.random.random_integers(0, 360, 1)
+
+# Bestimmung des gegenueberliegenden Winkels
 co_winkel = (winkel + 180) % 360
 
 print winkel
