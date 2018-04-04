@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 
 t = time.time()
-for n in range(1, 10000000):
+for n in range(1, 100000):
     i = 0
     a = n
     l = []
