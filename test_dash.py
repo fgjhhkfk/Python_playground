@@ -4,18 +4,19 @@ import datetime
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, Event
 
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-    html.Div(children='''wasauchimmer:'''),
-        # dcc.Interval(
-        #     id='interval_component',
-        #     interval=50000,
-        #     n_intervals=0
-        #     )
-        html.Div(id='output-graph'),
+    # html.Div(children='''wasauchimmer:'''),
+    # dcc.Interval(
+    #         id='interval_component',
+    #         interval=10000,
+    #         n_intervals=0
+    #         ),
+    html.Div(id='output-graph'),
+    html.Button(id='submit', type='submit', children='ok'),
 
     # html.Div(children='''Symbol to graph:'''),
     #     # dcc.Interval(
@@ -37,8 +38,11 @@ def read_from_file():
 
 @app.callback(
     Output(component_id='output-graph', component_property='children'),
-    # [Input('interval_component', 'n_intervals')]
-    [Input('my-button', 'n_clicks')]
+    # [Input('interval_component', 'n_intervals')],
+    [],
+    [],
+    [Event('submit', 'click')],
+    # [Input('my-button', 'n_clicks')]
 )
 def update_value(input_data):
     xdata, ydata = read_from_file()
@@ -47,7 +51,7 @@ def update_value(input_data):
         id='example-graph',
         figure={
             'data': [
-                {'x': xdata, 'y': ydata, 'type': 'bar', 'name': input_data},
+                {'x': xdata, 'y': ydata, 'type': 'line', 'name': input_data},
             ],
             # 'layout': {
             #     'title': input_data
