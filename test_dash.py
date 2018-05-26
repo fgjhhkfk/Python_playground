@@ -4,7 +4,7 @@ import datetime
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output, Event
+from dash.dependencies import Input, Output, State, Event
 
 app = dash.Dash()
 
@@ -16,6 +16,7 @@ app.layout = html.Div(children=[
     #         n_intervals=0
     #         ),
     html.Div(id='output-graph'),
+    dcc.Input(id='input', type='text', value=''),
     html.Button(id='submit', type='submit', children='ok'),
 
     # html.Div(children='''Symbol to graph:'''),
@@ -40,7 +41,7 @@ def read_from_file():
     Output(component_id='output-graph', component_property='children'),
     # [Input('interval_component', 'n_intervals')],
     [],
-    [],
+    [State('input', 'value')],
     [Event('submit', 'click')],
     # [Input('my-button', 'n_clicks')]
 )
