@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="val1">0</div>
+<div id="val2">0</div>
+
+<button type="button" onclick="increase('val1')">1 +</button>
+<button type="button" onclick="decrease('val1')">1 -</button>
+<button type="button" onclick="increase('val2')">2 +</button>
+<button type="button" onclick="decrease('val2')">2 -</button>
+
+<script>
+function increase(foobar) {
+    var x = document.getElementById(foobar).innerHTML;
+    var y = 1;
+    var z = Number(x) + y;
+    document.getElementById(foobar).innerHTML = z;
+}
+function decrease(foobar) {
+    var x = document.getElementById(foobar).innerHTML;
+    var y = 1;
+    var z = Number(x) - y;
+    document.getElementById(foobar).innerHTML = z;
+}
+</script>
+
+</body>
+</html>
