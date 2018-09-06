@@ -1,2 +1,4 @@
 flaskapp/static/bilder/
+flaskapp/foobar.sqlite
+*.pyc
 .gitingnore

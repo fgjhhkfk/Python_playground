@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="static/css/home.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+        <title></title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                add player | save game | show stats | show results | standings
+            </div>
+            <div class="side1">
+                <div class="player1">
+                    hjk
+                </div>
+                <div id="score1" class="score1">
+                    1
+                </div>
+                <div class="modify">
+                        <button class="up" type="button" onclick="decrease('score1')">-</button>
+                        <button class="up" type="button" onclick="increase('score1')">+</button>
+                </div>
+            </div>
+            <div class="side2">
+                <div class="player2">
+                    gatz
+                </div>
+                <div id="score2" class="score2">
+                    0
+                </div>
+                <div class="modify">
+                        <button class="up" type="button" onclick="decrease('score2')">-</button>
+                        <button class="up" type="button" onclick="increase('score2')">+</button>
+                </div>
+            </div>
+            <div class="footer">
+                footer
+            </div>
+        </div>
+        <script>
+            function increase(foobar) {
+                var x = document.getElementById(foobar).innerHTML;
+                var y = 1;
+                var z = Number(x) + y;
+                document.getElementById(foobar).innerHTML = z;
+            }
+            function decrease(foobar) {
+                var x = document.getElementById(foobar).innerHTML;
+                var y = 1;
+                var z = Number(x) - y;
+                document.getElementById(foobar).innerHTML = z;
+            }
+        </script>
+    </body>
+</html> 
+
